@@ -9,12 +9,14 @@ import { supabase } from "./supabase.js";
 export async function mostrarAdmin() {
   const app = document.getElementById("app");
   app.innerHTML = `
+  <section>
     <h2>Panel Administrativo</h2>
-    <section id="panel">
+    <div id="panel">
       <div id="usuarios"></div>
       <div id="canciones"></div>
       <p id="mensaje"></p>
-    </section>
+    </div>
+  </section>
   `;
 
   const mensaje = document.getElementById("mensaje");
@@ -44,6 +46,7 @@ return;
 }
 
   usuariosDiv.innerHTML = `
+  <div id="users-cont">
     <h3>Lista de Usuarios</h3>
     ${
       usuarios.length === 0
@@ -51,14 +54,17 @@ return;
         : `<ul>
             ${usuarios.map(
               (usr) => `
-              <li style="margin-bottom:8px;">
+              <li>
+              <div class="user-info">
                 <strong>${escapeHtml(usr.nombre)}</strong>
                 (${escapeHtml(usr.correo)}) - ${escapeHtml(usr.telefono || "Sin teléfono")}
-                <button data-id="${usr.id}" class="borrar-usuario" style="margin-left:8px;">Eliminar</button>
+              </div>
+                <button data-id="${usr.id}" class="borrar-usuario">Eliminar</button>
               </li>`
             ).join("")}
           </ul>`
     }
+  </div>
   `;
 
   // ----- Cargar canciones con join para playlist -----
@@ -109,19 +115,19 @@ return;
                 : "";
 
               return `
-                <li style="margin-bottom:12px;border-bottom:1px solid #eee;padding-bottom:8px;">
+                <li>
                   <div><strong>${escapeHtml(song.titulo)}</strong> (${escapeHtml(song.genero)})</div>
-                  <div style="font-size:0.9em;color:#555;">Usuario: ${usrNombre} — Playlist: ${plNombre}</div>
-                  <div style="margin-top:6px;">${descripcion}</div>
+                  <div>Usuario: ${usrNombre} — Playlist: ${plNombre}</div>
+                  <div>${descripcion}</div>
                   ${portadaHtml}
-                  <div style="margin-top:6px;">
+                  <div>
                     Duración: <input type="number" min="0" step="0.1" value="${song.duracion ?? ""}" data-id="${song.id}" class="duracion-input" style="width:70px;">
                   </div>
                 </li>
               `;
             }).join("")}
           </ul>
-          <button id="guardar-duracion" style="margin-top:8px;">💾 Guardar cambios</button>`
+          <button id="guardar-duracion">💾 Guardar cambios</button>`
     }
   `;
 

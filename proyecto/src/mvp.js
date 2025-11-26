@@ -4,7 +4,9 @@ export function mostrarMVP() {
   const app = document.getElementById('app');
   app.innerHTML = `
     <section>
-      <h2>Subir Canción (MVP Spotify)</h2>
+    <div id="song-upload">
+    <div id="upload">
+      <h2>Canción <span>(MVP Spotify)</span></h2>
       <form id="cancion-form">
         <input type="text" name="titulo" placeholder="Título" required />
         <textarea name="descripcion" placeholder="Descripción"></textarea>
@@ -24,9 +26,14 @@ export function mostrarMVP() {
         <input type="text" name="portada" placeholder="URL de portada (opcional)" />
         <button type="submit">Subir Canción</button>
       </form>
+    </div>
+    <hr>
+    <div id="song-list">
       <p id="mensaje" style="text-align:center;"></p>
       <h3>Mis Canciones</h3>
       <div id="lista-canciones"></div>
+    </div>
+    </div>
     </section>
   `;
 
@@ -89,12 +96,13 @@ export function mostrarMVP() {
     data.forEach(cancion => {
       const div = document.createElement('div');
       div.innerHTML = `
-        <hr>
+      <div class="song-card">
         <h4>${cancion.titulo}</h4>
         <p>${cancion.descripcion || ''}</p>
         <p><b>Género:</b> ${cancion.genero.toUpperCase()}</p>
         <p><b>Duración:</b> ${cancion.duracion} minutos</p>
         ${cancion.portada ? `<img src="${cancion.portada}" alt="${cancion.titulo}" width="200">` : ''}
+      </div>
       `;
       lista.appendChild(div);
     });
