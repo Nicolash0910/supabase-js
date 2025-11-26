@@ -1,4 +1,3 @@
-// src/menu.js
 import { supabase } from "./supabase.js";
 import { mostrarRegistro } from "./register.js";
 import { mostrarLogin } from "./login.js";
@@ -48,10 +47,12 @@ export async function cargarMenu() {
 
     menu.innerHTML = `
       <div>
-        <button data-action="canciones">Subir Canciones</button>
+        <button data-action="canciones" id="songs">Subir Canciones</button>
+        <div id="user-options">
         <button data-action="usuarios">Mi Perfil</button>
         ${esAdmin ? '<button data-action="admin">Admin</button>' : ''}
         <button data-action="logout">Cerrar sesión</button>
+        </div>
       </div>
     `;
   }

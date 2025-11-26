@@ -1,96 +1,423 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: #000;
+  color: #000;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#menu {
+  width: 100%;
+  max-width: 1366px;
+  background-color: #2228;
+  border: 1px solid #222;
+  padding: 4px;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+
+#menu button {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 12px 20px;
+  transition: transform 0.3s ease;
+}
+
+#menu button:hover {
+  background-color: #222;
+  transform: translate(0, -2px);
+}
+
+#menu button:focus {
+  background-color: #222;
+}
+
+#menu div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#user-options {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
 }
 
 #app {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 1366px;
+  background-color: #2228;
+  color: #fff;
+  border: 1px solid #222;
+  padding: 16px 32px;
+  border-radius: 8px;
   margin: 0 auto;
-  padding: 2rem;
+  margin-top: 16px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section hr {
+  border: 0;
+  border-left-color: #777;
+  border-left-style: inset;
+  border-left-width: 1px;
+
+  border-top-color: #777;
+  border-top-style: inset;
+  border-top-width: 1px;
+
+}
+
+section h2 {
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+section span {
+  font-size: 1rem;
+  color: #999;
+}
+
+#song-upload {
+  display: flex;
+  gap: 20px;
+}
+
+#upload {
+  width: 100%;
+  max-width: 400px;
+}
+
+#cancion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#cancion-form input {
+  padding: 8px 12px;
+  border: solid 1px #444;
+  background-color: #222;
+  border-radius: 4px;
+  color: #757575;
+}
+
+#cancion-form textarea {
+  padding: 8px 12px;
+  border: solid 1px #444;
+  background-color: #222;
+  border-radius: 4px;
+  color: #757575;
+}
+
+#cancion-form select {
+  padding: 8px 12px;
+  border: solid 1px #444;
+  background-color: #222;
+  border-radius: 4px;
+  color: #757575;
+}
+
+#cancion-form button {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #1DB95480;
+  color: #fff;
+  border: 1px solid #1DB954;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 20px 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#cancion-form  button:hover {
+  background-color: #1DB954;
+}
+
+#song-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#song-list h3 {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+#lista-canciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.song-card {
+  display: flex;
+  flex-direction: column;
+  width: 425px;
+  background-color: #222;
+  color: #757575;
+  border: solid 1px #333;
+  border-radius: 8px;
+  gap: 8px;
+  padding: 20px;
+}
+
+.song-card h4 {
+  font-size: 2rem;
+  font-weight: 100;
+  color: #fff;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+#user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#user-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#user-form input {
+  padding: 8px 12px;
+  border: solid 1px #444;
+  background-color: #222;
+  border-radius: 4px;
+  color: #757575;
+}
+
+#user-form button {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #1DB95480;
+  color: #fff;
+  border: 1px solid #1DB954;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#user-form  button:hover {
+  background-color: #1DB954;
+}
+
+#panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#users-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#users-cont h3 {
+  font-size: 1.5rem;
+}
+
+#users-cont ul {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #333;
+  border-radius: 8px;
+  padding: 4px;
+  list-style: none;
+  gap: 4px;
+}
+
+#users-cont li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #222;
+  border-radius: 4px;
+}
+
+.user-info {
+  display: flex;
+  gap: 20px;
+}
+
+.borrar-usuario {
+  padding: 8px 20px;
+  margin: -8px;
+  border-radius: 4px;
+}
+
+#canciones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#canciones h3 {
+  font-size: 1.5rem;
+}
+
+#canciones ul {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #333;
+  border-radius: 8px;
+  padding: 4px;
+  list-style: none;
+  gap: 4px;
+}
+
+#canciones li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #222;
+  border-radius: 4px;
+  gap: 8px;
+}
+
+#canciones input {
+  font-size: 1rem;
+  border: none;
+  background-color: #222;
+  border-radius: 4px;
+  color: #757575;
+}
+
+#canciones button {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #1DB95480;
+  color: #fff;
+  border: 1px solid #1DB954;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#registration-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#registration-page h2 {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+#registro-form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.card {
-  padding: 2em;
+#registro-form input {
+  padding: 8px 12px;
+  border: solid 1px #444;
+  background-color: #222;
+  border-radius: 4px;
+  color: #757575;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+#registro-form button {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #1DB95480;
+  color: #fff;
+  border: 1px solid #1DB954;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 20px;
+  transition: 0.3s;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+#register-now {
+  margin: 0 auto;
+}
+
+#register-now a {
+  color: #1DB954;
+}
+
+#login-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#login-page h2 {
+  text-align: center;
+}
+
+#login-form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#login-form input {
+  padding: 8px 12px;
+  border: solid 1px #444;
+  background-color: #222;
+  border-radius: 4px;
+  color: #757575;
+}
+
+#login-form button {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #1DB95480;
+  color: #fff;
+  border: 1px solid #1DB954;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#ir-registro {
+  background-color: transparent;
+  border: none;
+  color: #1DB954;
+  font-size: 1rem;
+  cursor: pointer;
 }

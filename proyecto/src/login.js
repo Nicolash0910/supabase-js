@@ -6,6 +6,7 @@ export function mostrarLogin() {
   const app = document.getElementById('app');
   app.innerHTML = `
   <section>
+  <div id="login-page">
     <h2>Iniciar Sesión En Spotife</h2>
     <form id="login-form">
       <input type="email" name="correo" placeholder="Correo" required />
@@ -14,6 +15,7 @@ export function mostrarLogin() {
     </form>
     <p id="error" style="color:red;"></p>
     <button id="ir-registro">Crear cuenta</button>
+    </div>
   </section>
   `;
 

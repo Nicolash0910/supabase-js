@@ -5,6 +5,7 @@ export function mostrarRegistro() {
   const app = document.getElementById('app');
   app.innerHTML = `
     <section>
+    <div id="registration-page">
       <h2>Crear cuenta  De Spotife </h2>
       <form id="registro-form">
         <input type="text" name="nombre" placeholder="Nombre de usuario" required />
@@ -14,7 +15,8 @@ export function mostrarRegistro() {
         <button type="submit">Registrarse</button>
       </form>
       <p id="error" style="color:red;"></p>
-      <p>¿Ya tienes cuenta? <a id="ir-login" href="#">Inicia sesión</a></p>
+      <p id="register-now">¿Ya tienes cuenta? <a id="ir-login" href="#">Inicia sesión</a></p>
+    </div>
     </section>
   `;
 

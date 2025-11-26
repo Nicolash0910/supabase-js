@@ -4,17 +4,22 @@ export async function mostrarUser() {
   const app = document.getElementById("app");
   app.innerHTML = `
     <section>
+    <div id="profile">
       <h2>Perfil del Usuario</h2>
       <form id="user-form">
-        <label>Nombre</label>
+        <label>Nombre
         <input type="text" id="nombre" required />
-        <label>Correo (solo lectura)</label>
-        <input type="email" id="correo" disabled />
-        <label>Teléfono</label>
-        <input type="text" id="telefono" />
+          </label>
+        <label>Correo (solo lectura)
+          <input type="email" id="correo" disabled />
+        </label>
+        <label>Teléfono
+          <input type="text" id="telefono" />
+        </label>
         <button type="submit">Actualizar datos</button>
       </form>
       <p id="mensaje"></p>
+      </div>
     </section>
   `;
 
